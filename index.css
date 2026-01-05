@@ -162,8 +162,82 @@ footer .connect a { display: inline-block; width: 40px; height: 40px; text-inden
 footer .connect a.facebook { background-image: url('https://cdn-icons-png.flaticon.com/512/733/733547.png'); }
 footer .connect a.instagram { background-image: url('https://cdn-icons-png.flaticon.com/512/2111/2111463.png'); }
 
+/* --- 側邊選單與層級修正 --- */
+.side-menu {
+    position: fixed; 
+    top: 0; 
+    left: -280px; 
+    width: 280px; 
+    height: 100%;
+    background: #FFF9E3; /* 手機版建議實色，閱讀較清楚 */
+    z-index: 4000; /* 提高到最高層級 */
+    transition: 0.4s ease; 
+    padding: 20px;
+}
+
+.side-menu.active { 
+    left: 0; 
+    box-shadow: 10px 0 30px rgba(0,0,0,0.3); 
+}
+
+.overlay { 
+    display: none; 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background: rgba(0,0,0,0.5); 
+    z-index: 3500; /* 低於 side-menu 但高於 header */
+}
+
+/* --- 響應式優化 (手機/平板) --- */
 @media (max-width: 850px) {
-    .nav-desktop { display: none; }
-    .hamburger { display: flex; }
-    .service-grid { grid-template-columns: 1fr; }
+    /* 強制隱藏桌面導覽列，避免文字重複擠壓 */
+    .nav-desktop, #navigation { 
+        display: none !important; 
+    }
+
+    /* 顯示漢堡選單 */
+    .hamburger { 
+        display: flex !important; 
+    }
+
+    header {
+        padding: 0 20px; /* 縮小左右間距 */
+    }
+
+    .header-container {
+        height: 60px; /* 手機版 Header 稍微縮短 */
+    }
+
+    .logo {
+        font-size: 18px; /* 縮小 Logo 字體 */
+    }
+
+    /* 修正內容區塊間距 */
+    .content-wrapper {
+        padding: 20px 15px;
+    }
+
+    /* 輪播圖高度調整 */
+    .mySlides img {
+        height: 250px;
+    }
+
+    /* 服務磚塊改為單欄 */
+    .service-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .service-tile {
+        padding: 20px;
+        min-height: auto;
+    }
+    
+    /* 地圖高度調整 */
+    .map-container iframe {
+        height: 250px;
+    }
 }
