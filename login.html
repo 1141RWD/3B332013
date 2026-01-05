@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>系會登入系統｜資管系學會</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css"> <link rel="stylesheet" href="login.css">
+</head>
+<body class="bg-custom">
+
+<header>
+    <div class="header-container">
+        <a href="index.html" class="logo">NCUT IM 資訊管理系</a>
+        <ul id="navigation">
+            <li><a href="eventdetail.html">活動介紹</a></li>
+            <li class="menu">
+                <a href="#">學校官網</a>
+                <ul class="primary">
+                    <li><a href="https://mis.ncut.edu.tw/" target="_blank">資管系首頁</a></li>
+                    <li><a href="https://www.ncut.edu.tw/" target="_blank">勤益官網</a></li>
+                </ul>
+            </li>
+            <li><a href="https://www.instagram.com/ncutimno1/" target="_blank">關於我們</a></li>
+            <li><a href="index.html">回首頁</a></li>
+            <li class="selected"><a href="login.html">登入</a></li>
+        </ul>
+    </div>
+</header>
+
+<div class="content-wrapper">
+    <main class="card" style="max-width: 450px; margin: 60px auto;">
+        <div class="login-header-wrapper">
+            <h2 class="login-title">系統登入</h2>
+            <div class="info-tooltip">
+                <div class="icon">?</div>
+                <div class="tooltip-box">
+                    <strong>登入提示：</strong><br>
+                    帳號：輸入學號<br>
+                    密碼：2個英文大小寫+6位數字<br>
+                </div>
+            </div>
+        </div>
+        
+        <form id="loginForm">
+            <input type="text" id="uid" name="id" placeholder="帳號 / 學號" required>
+            <div class="password-wrapper">
+                <input type="password" id="upass" name="pwd" placeholder="密碼" required>
+                <span class="toggle-password" id="eyeIcon">👁</span>
+            </div>
+            
+            <div class="btn-group">
+                <input type="submit" value="登入">
+                <input type="reset" value="重置">
+            </div>
+        </form>
+
+        <a href="forgetpsaaword.html" class="register-link">忘記密碼? 點此查看密碼</a>
+        <a href="register.html" class="register-link">尚未註冊？點此前往註冊申請</a>
+    </main>
+</div>
+
+<footer class="minimal-footer">
+    <div class="connect">
+        <a href="https://www.facebook.com/NCUTIM" class="facebook" target="_blank">facebook</a>
+        <a href="https://www.instagram.com/ncutimno1/" class="instagram" target="_blank">instagram</a>
+    </div>
+    <div class="footer-info">
+        © 國立勤益科技大學 資訊管理系 系學會<br>
+        地址：411030 台中市太平區中山路二段57號
+    </div>
+</footer>
+
+<script src="login.js"></script>
+<script src="auth.js"></script>
+</body>
+</html>

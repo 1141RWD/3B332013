@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>活動報名｜資管系學會</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="join_event.css">
+</head>
+<body class="bg-custom">
+
+<div class="overlay" onclick="toggleMenu()"></div>
+<nav class="side-menu">
+    <div class="side-menu-header">選單 MENU</div>
+    <ul>
+        <li><a href="index.html"><i class="fa-solid fa-house"></i> 回首頁</a></li>
+        <li><a href="eventdetail.html"><i class="fa-solid fa-wand-magic-sparkles"></i> 活動介紹</a></li>
+        <li><a href="login.html"><i class="fa-solid fa-right-to-bracket"></i> 會員登入</a></li>
+        <li><a href="https://www.instagram.com/ncutimno1/" target="_blank"><i class="fa-brands fa-instagram"></i> 關於我們</a></li>
+    </ul>
+</nav>
+
+<header>
+    <div class="header-container">
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+        <a href="index.html" class="logo">NCUT IM 資訊管理系</a>
+        <ul id="navigation" class="nav-desktop">
+            <li><a href="eventdetail.html">活動介紹</a></li>
+            <li class="menu">
+                <a href="#">學校官網</a>
+                <ul class="primary">
+                    <li><a href="https://mis.ncut.edu.tw/" target="_blank">資管系首頁</a></li>
+                    <li><a href="https://www.ncut.edu.tw/" target="_blank">勤益官網</a></li>
+                </ul>
+            </li>
+            <li><a href="https://www.instagram.com/ncutimno1/" target="_blank">關於我們</a></li>
+            <li><a href="index.html">回首頁</a></li>
+            <li><a href="login.html">登入</a></li>
+        </ul>
+    </div>
+</header>
+
+<div class="content-wrapper">
+    <main class="card" id="form-container">
+        <h1>🎉 活動報名 🎉</h1>
+        <p class="subtitle">請填寫正確資料以利後續聯繫</p>
+
+        <form id="registrationForm">
+            <div class="form-item">
+                <label>要報名的活動</label>
+     <select name="activity" id="activity-select" required>
+    <option value="">-- 請選擇活動 --</option>
+    <option value="茶會">新生迎新茶會</option>
+    <option value="資管盃電競大賽">資管盃電競大賽</option>
+    <option value="春季系友烤肉趣">春季系友烤肉趣 (即將截止)</option>
+    <option value="資管三系聯合排球賽">資管三系聯合排球賽</option>
+    
+</select>
+            </div>
+
+            <div class="form-item">
+                <label>學號</label>
+                <input type="text" name="student_id" placeholder="請輸入學號" required>
+            </div>
+
+            <div class="form-item">
+                <label>姓名</label>
+                <input type="text" name="student_name" placeholder="請輸入真實姓名" required>
+            </div>
+
+            <div class="form-item">
+                <label>班級</label>
+                <input type="text" name="student_class" placeholder="例如：資管二乙" required>
+            </div>
+
+            <div class="form-item">
+                <label>聯絡方式 (IG/FB)</label>
+                <input type="text" name="student_contact" placeholder="留下聯絡資訊" required>
+            </div>
+
+            <button type="submit" class="submit-btn">確認送出報名</button>
+        </form>
+    </main>
+
+    <main class="card" id="success-container" style="display: none;">
+        <div class="success-msg">🎉 報名成功！</div>
+        <p style="text-align:center;">資料已成功模擬提交，感謝您的參與。</p>
+        <button class="submit-btn" onclick="window.location.href='eventdetail.html';">返回活動介紹</button>
+    </main>
+</div>
+
+<footer>
+    <div class="connect">
+        <a href="https://www.facebook.com/NCUTIM" class="facebook" target="_blank">facebook</a>
+        <a href="https://www.instagram.com/ncutimno1/" class="instagram" target="_blank">instagram</a>
+    </div>
+    <div class="footer-copy">
+        © 國立勤益科技大學 資訊管理系 系學會<br>
+        地址：411030 台中市太平區中山路二段57號
+    </div>
+</footer>
+
+<script src="join_event.js"></script>
+<script src="auth.js"></script>
+</body>
+</html>

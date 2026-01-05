@@ -1,0 +1,240 @@
+/* register.css - 全方位修正版 */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: "微軟正黑體", sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: url('bgimg.jpg') fixed center/cover no-repeat !important;
+}
+
+/* ===== Header 修正區 ===== */
+header {
+    background-color: #FFF9E3;
+    border-bottom: 5px solid #ccb082;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    padding: 0 40px;
+    z-index: 1000;
+    width: 100%;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #4A3B2A;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+#navigation {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+#navigation > li {
+    position: relative;
+    padding: 0 15px;
+}
+
+#navigation a {
+    text-decoration: none;
+    color: #4A3B2A;
+    font-weight: bold;
+    line-height: 80px; /* 使文字置中於 80px 高度 */
+    display: block;
+    transition: 0.3s;
+}
+
+#navigation a:hover { color: #1B4F72; }
+
+/* 下拉選單子層 - 關鍵定位 */
+#navigation .menu ul {
+    display: none;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    background-color: #FFF9E3;
+    min-width: 180px;
+    list-style: none;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    border-top: 3px solid #ccb082;
+    padding: 10px 0;
+    z-index: 999;
+}
+
+#navigation li:hover > ul { display: block; }
+
+#navigation ul li a {
+    line-height: 40px;
+    padding: 0 20px;
+    font-size: 15px;
+}
+
+#navigation ul li:hover { background-color: #f2e9d9; }
+
+/* ===== 中間容器與卡片 ===== */
+.content-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px 50px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    width: 100%;
+    max-width: 750px;
+    text-align: center;
+}
+
+.form-title {
+    font-size: 28px;
+    color: #1B4F72;
+    margin-bottom: 30px;
+}
+
+/* 表單佈局 */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    text-align: left;
+}
+
+.form-group { display: flex; flex-direction: column; }
+.full-width { grid-column: span 2; }
+
+.form-group label {
+    font-weight: bold;
+    color: #1B4F72;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+input, select {
+    padding: 12px;
+    border: 1px solid #ccb082;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+}
+
+.hint { font-size: 12px; color: #666; margin-top: 4px; }
+
+.gender-group {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    height: 45px;
+}
+
+.btn-register {
+    grid-column: span 2;
+    background: #1B4F72;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 20px;
+}
+
+.btn-register:hover {
+    background: #2874A6;
+    transform: translateY(-2px);
+}
+
+.error-alert {
+    grid-column: span 2;
+    color: #e74c3c;
+    background: #fdeaea;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* ===== Footer 最終修正版 ===== */
+footer {
+    background-color: #FFF9E3;
+    color: #4A3B2A;
+    padding: 30px 20px;
+    text-align: center;
+    border-top: 5px solid #ccb082;
+    font-size: 15px;
+    width: 100%;
+}
+
+footer .connect {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 15px;
+}
+
+footer .connect a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    /* 關鍵：隱藏 HTML 裡的文字內容，只顯示背景圖 */
+    text-indent: -9999px; 
+    overflow: hidden;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: 0.3s;
+    border: none;
+    text-decoration: none;
+}
+
+/* FB 圖示 */
+footer .connect a.facebook { 
+    background-image: url('https://cdn-icons-png.flaticon.com/512/733/733547.png'); 
+}
+
+/* IG 圖示 */
+footer .connect a.instagram { 
+    background-image: url('https://cdn-icons-png.flaticon.com/512/2111/2111463.png'); 
+}
+
+footer .connect a:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+.footer-copy {
+    line-height: 1.6;
+    font-weight: bold;
+    color: #4A3B2A;
+}
+
+/* ===== RWD ===== */
+@media (max-width: 850px) {
+    .header-container { height: auto; flex-direction: column; padding: 15px; }
+    #navigation { margin-top: 10px; flex-wrap: wrap; justify-content: center; }
+    #navigation a { line-height: 40px; }
+    .form-grid { grid-template-columns: 1fr; }
+    .form-group, .btn-register, .full-width { grid-column: span 1; }
+    .card { padding: 30px 20px; }
+    #navigation .menu ul { position: static; box-shadow: none; border: none; width: 100%; text-align: center; }
+}

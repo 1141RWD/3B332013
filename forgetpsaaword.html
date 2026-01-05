@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>忘記密碼｜資管系學會</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css"> <link rel="stylesheet" href="forgetpsaaword.css">
+</head>
+<body class="bg-custom">
+
+<header>
+    <div class="header-container">
+        <a href="index.html" class="logo">NCUT IM 資訊管理系</a>
+        <ul id="navigation">
+            <li><a href="eventdetail.html">活動介紹</a></li>
+            <li class="menu">
+                <a href="#">學校官網 <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="primary">
+                    <li><a href="https://mis.ncut.edu.tw/" target="_blank">資管系首頁</a></li>
+                    <li><a href="https://www.ncut.edu.tw/" target="_blank">勤益官網</a></li>
+                </ul>
+            </li>
+            <li><a href="index.html">回首頁</a></li>
+            <li><a href="login.html">登入</a></li>
+        </ul>
+    </div>
+</header>
+
+<div class="content-wrapper">
+    <main class="card">
+        <h2 class="form-title">🔐 密碼查詢</h2>
+
+        <form id="forgotForm">
+            <label>學號</label>
+            <input type="text" id="member_id" placeholder="例如：4A123456" required>
+            
+            <label>姓名</label>
+            <input type="text" id="member_name" placeholder="您的真實姓名" required>
+            
+            <label>出生日期</label>
+            <input type="date" id="member_bir" required>
+            
+            <label>所屬系所</label>
+            <select id="member_dept" required>
+                <option value="">--- 請選擇系所 ---</option>
+                    <option>電機工程系</option>
+                    <option>電子工程系</option>
+                    <option>資訊工程系</option>
+                    <option>人工智慧應用工程系</option>
+                    <option>資訊管理系</option>
+                    <option>企業管理系</option>
+                    <option>流通管理系</option>
+                    <option>休閒產業管理系</option>
+                    <option>機械工程系</option>
+                    <option>冷凍空調與能源系</option>
+                    <option>化學工程與材料工程系</option>
+                    <option>文化創意事業系</option>
+                    <option>應用英語系</option>
+                    <option>景觀系</option>
+            </select>
+
+            <label>安全驗證：最喜歡的食物</label>
+            <input type="text" id="member_food" placeholder="註冊時填寫的答案" required>
+
+            <button type="submit" class="btn-submit">驗證並查看密碼</button>
+        </form>
+
+        <div id="result_msg" class="result-container" style="display: none;"></div>
+
+        <div class="back-link">
+            <a href="login.html">
+                <i class="fa-solid fa-arrow-left"></i> 返回登入
+            </a>
+        </div>
+    </main>
+</div>
+
+<footer class="minimal-footer">
+    <div class="connect">
+        <a href="https://www.facebook.com/NCUTIM" class="facebook" target="_blank">facebook</a>
+        <a href="https://www.instagram.com/ncutimno1/" class="instagram" target="_blank">instagram</a>
+    </div>
+    <div class="footer-info">
+        © 國立勤益科技大學 資訊管理系 系學會<br>
+        地址：411030 台中市太平區中山路二段57號
+    </div>
+</footer>
+
+<script src="forgetpsaaword.js"></script>
+<script src="auth.js"></script>
+</body>
+</html>

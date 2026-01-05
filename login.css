@@ -1,0 +1,134 @@
+/* login.css */
+
+body.bg-custom { 
+    background: url('bgimg.jpg') fixed center/cover !important; 
+}
+
+/* 登入卡片 */
+.card {
+    background: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(8px);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    width: 90%;
+}
+
+.login-title {
+    font-size: 30px; 
+    color: #1B4F72;
+    margin: 0;
+}
+
+/* 輸入框 */
+input[type="text"], 
+input[type="password"] { 
+    width: 100%; 
+    padding: 16px; 
+    margin: 15px 0; 
+    border: 1px solid #ccb082; 
+    border-radius: 12px; 
+    font-size: 16px; 
+    box-sizing: border-box; 
+}
+
+/* 按鈕群組 */
+.btn-group { 
+    display: flex; 
+    gap: 15px; 
+    margin-top: 25px; 
+}
+
+.btn-group input { 
+    flex: 1; 
+    padding: 15px; 
+    border: none; 
+    border-radius: 12px; 
+    background: #1B4F72; 
+    color: white; 
+    cursor: pointer; 
+    font-size: 18px; 
+    font-weight: bold; 
+    transition: 0.3s; 
+}
+
+.btn-group input:hover { 
+    background: #2E86C1; 
+    transform: translateY(-2px); 
+}
+
+.btn-group input[type="reset"] { 
+    background: #7F8C8D; 
+}
+
+/* 提示與連結 */
+.register-link { 
+    margin-top: 20px; 
+    display: block; 
+    color: #1B4F72; 
+    font-weight: bold; 
+    text-decoration: none; 
+    text-align: center; 
+    font-size: 14px; 
+}
+
+.login-header-wrapper { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 12px; 
+    margin-bottom: 30px; 
+}
+
+/* Tooltip 提示框 */
+.info-tooltip { position: relative; display: inline-block; }
+.info-tooltip .icon { 
+    width: 24px; height: 24px; 
+    background-color: #ccb082; 
+    color: #4A3B2A; 
+    border-radius: 50%; 
+    display: flex; justify-content: center; align-items: center; 
+    font-size: 14px; font-weight: bold; cursor: pointer; 
+}
+
+.tooltip-box { 
+    visibility: hidden; 
+    width: 220px; 
+    background-color: #333; 
+    color: #fff; 
+    text-align: left; 
+    border-radius: 8px; 
+    padding: 12px; 
+    position: absolute; 
+    z-index: 20; 
+    bottom: 140%; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    opacity: 0; 
+    transition: 0.3s; 
+    font-size: 14px; 
+}
+
+.info-tooltip:hover .tooltip-box { 
+    visibility: visible; 
+    opacity: 1; 
+    transform: translateX(-50%) translateY(-5px); 
+}
+
+/* 密碼眼睛 */
+.password-wrapper { position: relative; }
+.toggle-password { 
+    position: absolute; 
+    right: 14px; top: 50%; 
+    transform: translateY(-50%); 
+    cursor: pointer; 
+    font-size: 18px; 
+    color: #555; 
+}
+
+/* 頁尾資訊 */
+.footer-info {
+    color: #4A3B2A; 
+    font-weight: bold;
+    margin-top: 10px;
+}

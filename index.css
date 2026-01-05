@@ -1,0 +1,169 @@
+/* index.css - 已修正下拉選單切掉的問題 */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: "微軟正黑體", sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: url('bgimg.jpg') fixed center/cover !important;
+}
+
+header {
+    background-color: #FFF9E3;
+    border-bottom: 5px solid #ccb082;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    padding: 0 40px;
+    z-index: 2000; /* 提高 header 層級 */
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.logo { font-size: 22px; font-weight: bold; color: #4A3B2A; text-decoration: none; }
+
+/* --- 導覽列與下拉選單修正 --- */
+#navigation { list-style: none; display: flex; }
+#navigation > li { position: relative; padding: 0 15px; }
+
+/* 主選單文字 */
+#navigation a { 
+    text-decoration: none; 
+    color: #4A3B2A; 
+    font-weight: bold; 
+    line-height: 80px; /* Header 高度保持 80px */
+    display: block; 
+    transition: 0.3s; 
+}
+
+#navigation a:hover { color: #1B4F72; }
+
+/* 下拉選單容器 */
+#navigation .primary {
+    display: none; 
+    position: absolute; 
+    top: 80px; /* 緊貼 header 底部 */
+    left: 0;
+    background-color: #FFF9E3; 
+    min-width: 180px; /* 最小寬度 */
+    width: max-content; /* 根據文字長度自動擴展，解決切掉的問題 */
+    list-style: none;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2); 
+    border-top: 3px solid #ccb082; 
+    padding: 10px 0;
+    z-index: 2100;
+}
+
+/* 下拉選單內的每一項 */
+#navigation .primary li {
+    width: 100%;
+}
+
+/* 下拉選單內的文字：重設行高是關鍵 */
+#navigation .primary li a {
+    line-height: 45px; /* 修正：將 80px 改成 45px，文字才不會被切掉 */
+    padding: 0 20px;
+    font-size: 15px;
+    display: block;
+}
+
+#navigation .primary li a:hover {
+    background-color: rgba(204, 176, 130, 0.2);
+}
+
+#navigation li:hover > .primary { display: block; }
+
+/* --- 其餘樣式保持不變 --- */
+.hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+.hamburger span { width: 25px; height: 3px; background: #4A3B2A; border-radius: 2px; }
+
+.side-menu {
+    position: fixed; top: 0; left: -280px; width: 280px; height: 100%;
+    background: rgba(255, 249, 227, 0.98); backdrop-filter: blur(10px);
+    z-index: 2000; transition: 0.4s ease; padding: 20px;
+}
+.side-menu.active { left: 0; box-shadow: 10px 0 30px rgba(0,0,0,0.3); }
+.side-menu-header { font-weight: bold; font-size: 20px; border-bottom: 2px solid #ccb082; padding-bottom: 10px; margin-bottom: 20px; color: #1B4F72; }
+.side-menu ul { list-style: none; }
+.side-menu ul li a { display: block; padding: 15px; color: #4A3B2A; text-decoration: none; font-weight: bold; border-radius: 10px; margin-bottom: 5px; }
+.side-menu ul li a:hover { background: #ccb082; color: white; }
+.overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1500; }
+.overlay.active { display: block; }
+
+.content-wrapper { flex: 1; display: flex; flex-direction: column; align-items: center; padding: 40px 20px; }
+
+.slideshow-container {
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    margin: 0 auto 40px auto;
+    z-index: 1; /* 確保輪播圖不會蓋過下拉選單 */
+}
+.mySlides img { width: 100%; height: 350px; object-fit: cover; cursor: zoom-in; display: block; }
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    background-color: rgba(0, 0, 0, 0.4);
+    text-decoration: none;
+    z-index: 10;
+    transition: 0.3s;
+}
+.next { right: 0; border-radius: 3px 0 0 3px; }
+.prev { left: 0; border-radius: 0 3px 3px 0; }
+.prev:hover, .next:hover { background-color: rgba(0, 0, 0, 0.8); }
+
+.service-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; width: 100%; max-width: 800px; margin-bottom: 60px; }
+.service-tile {
+    background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 25px; padding: 30px;
+    text-decoration: none; display: flex; flex-direction: column; justify-content: space-between;
+    min-height: 180px; transform-style: preserve-3d; transition: 0.3s;
+}
+.service-tile:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: #ccb082;
+    transform: translateY(-5px);
+}
+.service-icon { font-size: 40px; color: #ccb082; margin-bottom: 15px; }
+.service-title { font-size: 20px; font-weight: bold; color: #ffffff; }
+.service-desc { font-size: 13px; color: rgba(255, 249, 227, 0.8); }
+
+.map-section { width: 100%; max-width: 800px; margin-bottom: 60px; }
+.map-title { color: #fff; margin-bottom: 20px; text-align: center; text-shadow: 2px 2px 5px rgba(0,0,0,0.5); }
+.map-container { border-radius: 25px; overflow: hidden; border: 5px solid rgba(255, 255, 255, 0.2); box-shadow: 0 15px 40px rgba(0,0,0,0.4); }
+
+.lightbox {
+    display: none; position: fixed; z-index: 3000; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.9); justify-content: center; align-items: center;
+}
+.lightbox-content { max-width: 85%; max-height: 85%; border-radius: 10px; }
+.close-lightbox { position: absolute; top: 20px; right: 40px; color: white; font-size: 40px; cursor: pointer; }
+
+footer { background-color: #FFF9E3; color: #4A3B2A; padding: 30px 20px; text-align: center; border-top: 5px solid #ccb082; }
+footer .connect { display: flex; justify-content: center; gap: 25px; margin-bottom: 15px; }
+footer .connect a { display: inline-block; width: 40px; height: 40px; text-indent: -9999px; background-size: contain; background-repeat: no-repeat; }
+footer .connect a.facebook { background-image: url('https://cdn-icons-png.flaticon.com/512/733/733547.png'); }
+footer .connect a.instagram { background-image: url('https://cdn-icons-png.flaticon.com/512/2111/2111463.png'); }
+
+@media (max-width: 850px) {
+    .nav-desktop { display: none; }
+    .hamburger { display: flex; }
+    .service-grid { grid-template-columns: 1fr; }
+}

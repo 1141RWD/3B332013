@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>學生專區｜資管系學會</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css"> <link rel="stylesheet" href="sevent.css">
+</head>
+<body class="bg-custom">
+
+<div class="overlay" onclick="toggleMenu()"></div>
+<nav class="side-menu">
+    <div class="side-menu-header">選單 MENU</div>
+    <ul>
+        <li><a href="index.html"><i class="fa-solid fa-house"></i> 回首頁</a></li>
+        <li><a href="eventdetail.html"><i class="fa-solid fa-wand-magic-sparkles"></i> 活動介紹</a></li>
+        <li><a href="login.html"><i class="fa-solid fa-right-to-bracket"></i> 登出</a></li>
+    </ul>
+</nav>
+
+<header>
+    <div class="header-container">
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+        <a href="index.html" class="logo">NCUT IM 資訊管理系</a>
+        <ul id="navigation" class="nav-desktop">
+            <li><a href="eventdetail.html">活動介紹</a></li>
+            <li class="menu">
+                <a href="#">學校官網 <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="primary">
+                    <li><a href="https://mis.ncut.edu.tw/" target="_blank">資管系首頁</a></li>
+                    <li><a href="https://www.ncut.edu.tw/" target="_blank">勤益官網</a></li>
+                </ul>
+            </li>
+             <li><a href="https://www.instagram.com/ncutimno1/" target="_blank">關於我們</a></li>
+            <li><a href="index.html">回首頁</a></li>
+            <li><a href="login.html">登出</a></li>
+        </ul>
+    </div>
+</header>
+
+<div class="content-wrapper">
+    <main class="card glass-card" data-tilt>
+        <div class="welcome-box">
+            <div class="profile-container">
+                <i class="fa-solid fa-circle-user user-icon"></i>
+            </div>
+            <p class="welcome-text">STUDENT PANEL</p>
+            <h1 id="user_name_display" class="highlight-name">載入中...</h1>
+            <div class="status-divider"></div>
+            <p class="sub-text">您已成功登入系統</p>
+
+            <div class="registration-area">
+                <a href="join_event.html" class="btn-primary-solid">
+                    <i class="fa-solid fa-pen-to-square"></i> 立即報名最新活動
+                </a>
+            </div>
+
+            <div class="detail-link-wrapper">
+                <a href="eventdetail.html" class="text-link">
+                    <i class="fa-solid fa-circle-info"></i> 查看活動詳細資訊
+                </a>
+            </div>
+        </div>
+    </main>
+</div>
+
+<footer class="minimal-footer">
+    <div class="footer-info">
+        © 國立勤益科技大學 資訊管理系 系學會
+    </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+<script src="sevent.js"></script>
+<script src="auth.js"></script>
+</body>
+</html>

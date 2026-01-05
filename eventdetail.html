@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>活動介紹｜資管系學會</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css"> 
+    <link rel="stylesheet" href="eventdetail.css">
+</head>
+<body class="bg-custom">
+
+<div class="overlay" onclick="toggleMenu()"></div>
+<nav class="side-menu">
+    <div class="side-menu-header">選單 MENU</div>
+    <ul>
+        <li><a href="index.html"><i class="fa-solid fa-house"></i> 回首頁</a></li>
+        <li><a href="eventdetail.html"><i class="fa-solid fa-wand-magic-sparkles"></i> 活動介紹</a></li>
+        <li><a href="login.html"><i class="fa-solid fa-right-to-bracket"></i> 會員登入</a></li>
+        <li><a href="https://www.instagram.com/ncutimno1/" target="_blank"><i class="fa-brands fa-instagram"></i> 關於我們</a></li>
+    </ul>
+</nav>
+
+<header>
+    <div class="header-container">
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+        
+        <a href="index.html" class="logo">NCUT IM 資訊管理系</a>
+        
+        <ul id="navigation" class="nav-desktop">
+            <li class="selected"><a href="eventdetail.html">活動介紹</a></li>
+            <li class="menu">
+                <a href="#">學校官網 <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="primary">
+                    <li><a href="https://mis.ncut.edu.tw/" target="_blank">資管系首頁</a></li>
+                    <li><a href="https://www.ncut.edu.tw/" target="_blank">勤益官網</a></li>
+                </ul>
+            </li>
+            <li><a href="https://www.instagram.com/ncutimno1/" target="_blank">關於我們</a></li>
+            <li><a href="index.html">回首頁</a></li>
+            <li><a href="login.html">登入</a></li>
+        </ul>
+    </div>
+</header>
+
+<main class="content-wrapper">
+<div class="event-container">
+    
+    <div class="event-card" onclick="openModal(this)"
+         data-name="茶會" data-date="2026-03-20" data-reg="2026-03-15"
+         data-loc="國商大樓 資訊演講廳" data-img="tea.jpg"
+         data-detail="https://www.instagram.com/p/DOY_CeDAbre/" data-closed="0">
+        <div class="status-badge" style="background-color: #27AE60;">開放報名中</div>
+        <img src="tea.jpg" alt="活動圖片">
+        <div class="title">茶會</div>
+    </div>
+
+    <div class="event-card" onclick="openModal(this)"
+         data-name="資管盃電競大賽" data-date="2026-04-12" data-reg="2026-04-05"
+         data-loc="計算機中心 302教室" data-img="GAME.jpg"
+         data-detail="" data-closed="0">
+        <div class="status-badge" style="background-color: #27AE60;">開放報名中</div>
+        <img src="GAME.jpg" alt="GAME.jpg">
+        <div class="title">資管盃電競大賽</div>
+    </div>
+
+    <div class="event-card" onclick="openModal(this)"
+         data-name="春季系友烤肉趣" data-date="2026-05-01" data-reg="2026-04-25"
+         data-loc="勤益後山烤肉區" data-img="BBQ.jpg"
+         data-detail="" data-closed="0">
+        <div class="status-badge" style="background-color: #E67E22;">即將截止</div>
+        <img src="BBQ.jpg" alt="BBQ.jpg">
+        <div class="title">春季系友烤肉趣</div>
+    </div>
+
+    <div class="event-card" onclick="openModal(this)"
+         data-name="環保尖兵淨灘日" data-date="2026-02-15" data-reg="2026-02-01"
+         data-loc="高美濕地周邊" data-img="BEACH.jpg"
+         data-detail="" data-closed="1">
+        <div class="status-badge" style="background-color: #E74C3C;">報名截止</div>
+        <img src="BEACH.jpg" alt="BEACH.jpg">
+        <div class="title">環保尖兵淨灘日</div>
+    </div>
+
+    <div class="event-card" onclick="openModal(this)"
+         data-name="資管三系聯合排球賽" data-date="2026-06-20" data-reg="2026-06-10"
+         data-loc="校本部 體育館" data-img="BALL.jpg"
+         data-detail="" data-closed="0">
+        <div class="status-badge" style="background-color: #27AE60;">開放報名中</div>
+        <img src="BALL.jpg" alt="BALL.jpg">
+        <div class="title">資管三系聯合排球賽</div>
+    </div>
+    
+    <div class="event-card" onclick="openModal(this)"
+         data-name="聖誕晚會" data-date="2025-12-24" data-reg="2025-12-20"
+         data-loc="學生中心" data-img="chri.jpg"
+         data-detail="" data-closed="1">
+        <div class="status-badge" style="background-color: #E74C3C;">報名截止</div>
+        <img src="chri.jpg" alt="活動圖片">
+        <div class="title">聖誕晚會</div>
+    </div>
+
+</div>
+</main>
+
+<div id="eventModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <h2 id="modalTitle"></h2>
+        <div class="modal-layout">
+            <div class="modal-left">
+                <img id="modalImg" src="">
+            </div>
+            <div class="modal-right">
+                <p>📅 <b>活動日期：</b><span id="modalDate"></span></p>
+                <p>📍 <b>活動地點：</b><span id="modalLoc"></span></p>
+                <p>📝 <b>報名截止：</b><span id="modalReg"></span></p>
+                <div style="margin-top:30px;">
+                    <a id="btnDetail" href="" target="_blank" class="go-register" style="background:#3498DB; margin-bottom:10px;">🔗 詳細資訊連結</a>
+                    <button id="regBtn" class="go-register">前往報名</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="minimal-footer">
+    <div class="connect">
+        <a href="https://www.facebook.com/NCUTIM" class="facebook" target="_blank"></a>
+        <a href="https://www.instagram.com/ncutimno1/" class="instagram" target="_blank"></a>
+    </div>
+    <div class="footer-info">
+        © 國立勤益科技大學 資訊管理系 系學會<br>
+        地址：411030 台中市太平區中山路二段57號
+    </div>
+</footer>
+
+<script src="eventdetail.js"></script>
+<script src="auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+/* sevent.css - 恢復原始背景色版 */
+
+/* 恢復原本背景顏色，不加深色遮罩 */
+body.bg-custom { 
+    background: url('bgimg.jpg') fixed center/cover !important; 
+}
+
+.content-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+/* 強化卡片質感，稍微提高不透明度以確保亮色背景下文字可讀 */
+.glass-card {
+    background: rgba(255, 255, 255, 0.85); /* 提高白色的透明度 */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    padding: 50px 30px;
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    /* 增加較重的陰影讓卡片從背景跳出來 */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); 
+    transition: transform 0.1s;
+}
+
+.user-icon {
+    font-size: 70px;
+    color: #1B4F72; /* 恢復深藍色圖示，在白底上更清楚 */
+    margin-bottom: 10px;
+}
+
+.welcome-text { 
+    color: #ccb082; 
+    font-size: 12px; 
+    letter-spacing: 2px; 
+    font-weight: bold;
+}
+
+.highlight-name {
+    color: #1B4F72; /* 名字改為深藍色 */
+    font-size: 32px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.status-divider {
+    height: 3px;
+    width: 40px;
+    background: #ccb082;
+    margin: 15px auto;
+}
+
+.sub-text { 
+    color: #555; /* 深灰色副標題 */
+    font-size: 15px; 
+    margin-bottom: 30px; 
+}
+
+/* 單色質感按鈕 - 深藍色 */
+.btn-primary-solid {
+    display: inline-block;
+    width: 100%;
+    max-width: 250px;
+    padding: 14px;
+    background: #1B4F72; 
+    color: white !important;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.btn-primary-solid:hover {
+    background: #154360;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(27, 79, 114, 0.3);
+}
+
+.detail-link-wrapper {
+    margin-top: 25px;
+}
+
+.text-link {
+    color: #2E86C1;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.text-link:hover { text-decoration: underline; }
+
+/* RWD 修復 */
+@media (max-width: 850px) {
+    .nav-desktop { display: none !important; }
+    .hamburger { display: flex; }
+    .glass-card { margin: 0 10px; padding: 40px 20px; }
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>系會系統 - 帳號註冊</title>
+    <link rel="stylesheet" href="register.css">
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <a href="index.html" class="logo">NCUT IM 資訊管理系</a>
+        
+        <ul id="navigation">
+            <li><a href="eventdetail.html">活動介紹</a></li>
+            
+            <li class="menu">
+                <a href="#">學校官網</a>
+                <ul class="primary">
+                    <li><a href="https://mis.ncut.edu.tw/" target="_blank">資管系首頁</a></li>
+                    <li><a href="https://www.ncut.edu.tw/" target="_blank">勤益官網</a></li>
+                </ul>
+            </li>
+            
+            <li><a href="https://www.instagram.com/ncutimno1/" target="_blank">關於我們</a></li>
+            
+            <li><a href="index.html">回首頁</a></li>
+            
+            <li><a href="login.html">登入</a></li>
+        </ul>
+    </div>
+</header>
+
+<div class="content-wrapper">
+    <main class="card">
+        <h2 class="form-title">新會員註冊申請</h2>
+        <div id="error-message" class="error-alert" style="display: none;"></div>
+
+        <form id="registerForm">
+            <div class="form-grid">
+                <div class="form-group full-width">
+                    <label>所屬系所</label>
+                    <select name="member_Department" id="member_Department" required>
+                        <option value="">請選擇系所</option>
+                        <option>資訊管理系</option>
+                        <option>企業管理系</option>
+                        <option>行銷與流通管理系</option>
+                        <option>電機工程系</option>
+                        <option>資訊工程系</option>
+                        <option>人工智慧應用工程系</option>
+                        <option>機械工程系</option>
+                        <option>健康產業科技研發與管理系</option>
+                        <option>化工與材料工程系</option>
+                        <option>文化創意事業系</option>
+                        <option>冷凍冷凍空調與能源系</option>
+                        <option>智慧自動化工程系</option>
+                        <option>電子工程系</option>
+                        <option>景觀系</option>
+                        <option>應用英語系</option>
+                        <option>工業工程與管理系</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>姓名</label>
+                    <input type="text" name="member_name" id="member_name" placeholder="請輸入全名" required>
+                </div>
+
+                <div class="form-group">
+                    <label>帳號 (學號)</label>
+                    <input type="text" name="member_id" id="member_id" placeholder="例如：4A123456" required>
+                </div>
+
+                <div class="form-group">
+                    <label>設定密碼</label>
+                    <input type="password" id="member_pass" name="member_pass" placeholder="請設定密碼" required>
+                    <span class="hint">格式：2位大小寫英文 + 6位數字</span>
+                </div>
+
+                <div class="form-group">
+                    <label>確認密碼</label>
+                    <input type="password" id="member_passcheck" name="member_passcheck" placeholder="再次輸入密碼" required>
+                </div>
+
+                <div class="form-group">
+                    <label>連絡電話</label>
+                    <input type="tel" name="member_phone" id="member_phone" placeholder="09xx-xxxxxx" required>
+                </div>
+
+                <div class="form-group">
+                    <label>喜歡的食物 (驗證用)</label>
+                    <input type="text" name="member_food" id="member_food" required>
+                </div>
+
+                <div class="form-group">
+                    <label>出生日期</label>
+                    <input type="date" name="member_bir" id="member_bir" required>
+                </div>
+
+                <div class="form-group full-width">
+                    <label>生理性別</label>
+                    <div class="gender-group">
+                        <label><input type="radio" name="member_Gender" value="男" required> 男</label>
+                        <label><input type="radio" name="member_Gender" value="女"> 女</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-register">提交註冊申請</button>
+            </div>
+        </form>
+    </main>
+</div>
+
+<footer>
+    <div class="connect">
+        <a href="https://www.facebook.com/NCUTIM" class="facebook" target="_blank">facebook</a>
+        <a href="https://www.instagram.com/ncutimno1/" class="instagram" target="_blank">instagram</a>
+    </div>
+    <div class="footer-copy">
+        © 國立勤益科技大學 資訊管理系 系學會<br>
+        地址：411030 台中市太平區中山路二段57號
+    </div>
+</footer>
+
+<script src="register.js"></script>
+<script src="auth.js"></script>
+</body>
+</html>

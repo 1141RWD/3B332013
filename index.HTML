@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>國立勤益科技大學｜資管系學會</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<div class="overlay" onclick="toggleMenu()"></div>
+<nav class="side-menu">
+    <div class="side-menu-header">選單 MENU</div>
+    <ul>
+        <li><a href="index.html"><i class="fa-solid fa-house"></i> 回首頁</a></li>
+        <li><a href="eventdetail.html"><i class="fa-solid fa-wand-magic-sparkles"></i> 活動介紹</a></li>
+        <li><a href="login.html"><i class="fa-solid fa-right-to-bracket"></i> 會員登入</a></li>
+        <li><a href="https://www.instagram.com/ncutimno1/" target="_blank"><i class="fa-brands fa-instagram"></i> 關於我們</a></li>
+    </ul>
+</nav>
+
+<header>
+    <div class="header-container">
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+        <a href="index.html" class="logo">NCUT IM 資訊管理系</a>
+        <ul id="navigation" class="nav-desktop">
+            <li><a href="eventdetail.html">活動介紹</a></li>
+            <li class="menu">
+                <a href="#">學校官網</a>
+                <ul class="primary">
+                    <li><a href="https://mis.ncut.edu.tw/" target="_blank">資管系首頁</a></li>
+                    <li><a href="https://www.ncut.edu.tw/" target="_blank">勤益官網</a></li>
+                </ul>
+            </li>
+            <li><a href="https://www.instagram.com/ncutimno1/" target="_blank">關於我們</a></li>
+            <li class="selected"><a href="index.html">回首頁</a></li>
+            <li><a href="login.html">登入</a></li>
+        </ul>
+    </div>
+</header>
+
+<main class="content-wrapper">
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="chri.jpg" alt="活動1">
+        </div>
+        <div class="mySlides fade">
+            <img src="tea.jpg" alt="活動2">
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+    </div>
+
+    <div class="service-grid">
+        <a href="eventdetail.html" class="service-tile">
+            <i class="fa-solid fa-wand-magic-sparkles service-icon"></i>
+            <div>
+                <h4 class="service-title">活動介紹</h4>
+                <p class="service-desc">探索資管系精彩活動，包含講座、競賽與晚會照片紀錄。</p>
+            </div>
+        </a>
+        <a href="https://www.instagram.com/ncutimno1/" target="_blank" class="service-tile">
+            <i class="fa-brands fa-instagram service-icon"></i>
+            <div>
+                <h4 class="service-title">社群影像</h4>
+                <p class="service-desc">追蹤我們的 Instagram，獲取第一手即時動態與美照。</p>
+            </div>
+        </a>
+        <a href="forgetpsaaword.html" class="service-tile">
+            <i class="fa-solid fa-user-shield service-icon"></i>
+            <div>
+                <h4 class="service-title">找回密碼</h4>
+                <p class="service-desc">忘記登入密碼？點擊這裡透過簡單驗證即可找回密碼。</p>
+            </div>
+        </a>
+        <a href="login.html" class="service-tile">
+            <i class="fa-solid fa-right-to-bracket service-icon"></i>
+            <div>
+                <h4 class="service-title">成員登入</h4>
+                <p class="service-desc">系學會成員專屬入口，登入後即可享有更多系統功能。</p>
+            </div>
+        </a>
+    </div>
+
+    <section class="map-section">
+        <h3 class="map-title"><i class="fa-solid fa-location-dot"></i> 我們在國立勤益科技大學</h3>
+        <div class="map-container">
+           <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3640.604124976454!2d120.7285628760416!3d24.14175337397911!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346922627f27c4a7%3A0x1cc856130460088d!2z5ZyL56uL6Innovative56eR5oqA5aSn5a24!5e0!3m2!1szh-TW!2stw!4v1716300000000!5m2!1szh-TW!2stw" 
+    width="100%" 
+    height="350" 
+    style="border:0;" 
+    allowfullscreen="" 
+    loading="lazy" 
+    referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+        </div>
+    </section>
+</main>
+
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="close-lightbox">×</span>
+    <img class="lightbox-content" id="lightbox-img">
+</div>
+
+<footer>
+    <div class="connect">
+        <a href="https://www.facebook.com/NCUTIM" class="facebook" target="_blank">facebook</a>
+        <a href="https://www.instagram.com/ncutimno1/" class="instagram" target="_blank">instagram</a>
+    </div>
+    <div class="footer-info">
+        © 國立勤益科技大學 資訊管理系 系學會<br>
+        地址：411030 台中市太平區中山路二段57號
+    </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+<script src="index.js"></script>
+<script src="auth.js"></script>
+</body>
+</html>
