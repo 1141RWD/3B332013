@@ -131,4 +131,66 @@ input[type="password"] {
     color: #4A3B2A; 
     font-weight: bold;
     margin-top: 10px;
+
+}
+/* ===== 1. 預設狀態 (桌面版) ===== */
+
+/* 桌面版隱藏漢堡按鈕 */
+.hamburger { 
+    display: none; 
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* 桌面版隱藏側邊選單與遮罩 */
+.side-menu, .overlay { 
+    display: none; 
+}
+
+/* 確保桌面導覽列顯示 */
+.nav-desktop {
+    display: flex !important;
+}
+
+/* ===== 2. 手機版狀態 (螢幕小於 850px 時才啟動) ===== */
+
+@media (max-width: 850px) {
+    /* 隱藏桌面導覽列 (防止重複) */
+    .nav-desktop { 
+        display: none !important; 
+    }
+
+    /* 顯示漢堡按鈕 */
+    .hamburger { 
+        display: flex !important; 
+    }
+
+    /* 啟用側邊選單樣式 */
+    .side-menu {
+        display: block; /* 讓它在手機版生效 */
+        position: fixed;
+        top: 0;
+        left: -280px; /* 預設躲在左邊 */
+        width: 280px;
+        height: 100%;
+        background: #FFF9E3;
+        z-index: 3000;
+        transition: 0.4s;
+        padding: 20px;
+    }
+
+    .side-menu.active {
+        left: 0; /* 點擊後滑出來 */
+    }
+
+    .overlay.active {
+        display: block; /* 點擊後黑色遮罩出現 */
+    }
+
+    /* 登入卡片在手機版微調 */
+    .card {
+        width: 95%;
+        padding: 25px;
+    }
 }
